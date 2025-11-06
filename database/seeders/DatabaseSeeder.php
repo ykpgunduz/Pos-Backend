@@ -19,9 +19,10 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Test User', 'password' => bcrypt('password')]
         );
 
-        // Ensure cafes and categories exist before products
+        // Ensure cafes, tables and categories exist before products
         $this->call([
             CafeSeeder::class,
+            CafeTableSeeder::class,
             CategorySeeder::class,
         ]);
 
