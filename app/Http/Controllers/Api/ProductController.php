@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Product;
+
+class ProductController extends Controller
+{
+    public function index()
+    {
+        return response()->json(Product::paginate(20));
+    }
+
+    public function show(Product $product)
+    {
+        return response()->json($product);
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'cafe_id' => 'required|integer',
+            'category_id' => 'required|integer',
+            'image' => 'nullable|string',
+            'name' => 'required|string',
+            'description' => 'nullable|string',
+            'price' => 'nullable|integer',
+            'stock' => 'nullable|integer',
+            'active' => 'nullable|boolean',
+            'star' => 'nullable|integer',
+        ]);
+
+        $product = Product::create($data);
+        return response()->json($product, 201);
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $data = $request->validate([
+            'cafe_id' => 'nullable|integer',
+            'category_id' => 'nullable|integer',
+            'image' => 'nullable|string',
+            'name' => 'nullable|string',
+            'description' => 'nullable|string',
+            'price' => 'nullable|integer',
+            'stock' => 'nullable|integer',
+            'active' => 'nullable|boolean',
+            'star' => 'nullable|integer',
+        ]);
+
+        $product->update($data);
+        return response()->json($product);
+    }
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+        return response()->json(['deleted' => true]);
+    }
+}
