@@ -11,6 +11,7 @@ class UserSeeder extends Seeder
 {
     /**
      * Her kafe için çalışanlar ve müşteriler oluşturur.
+     * Not: Users tablosunda sadece name, email, password alanları var.
      */
     public function run(): void
     {
@@ -27,22 +28,19 @@ class UserSeeder extends Seeder
         // Kahve Durağı Çalışanları
         $kahveDuragiUsers = [
             [
-                'name' => 'Ahmet Yılmaz',
+                'name' => 'Ahmet Yılmaz (Kahve Durağı - Yönetici)',
                 'email' => 'ahmet@kahveduragi.com',
                 'password' => Hash::make('password123'),
-                'role' => 'manager', // Yönetici
             ],
             [
-                'name' => 'Ayşe Demir',
+                'name' => 'Ayşe Demir (Kahve Durağı - Barista)',
                 'email' => 'ayse@kahveduragi.com',
                 'password' => Hash::make('password123'),
-                'role' => 'barista', // Barista
             ],
             [
-                'name' => 'Mehmet Kaya',
+                'name' => 'Mehmet Kaya (Kahve Durağı - Garson)',
                 'email' => 'mehmet@kahveduragi.com',
                 'password' => Hash::make('password123'),
-                'role' => 'waiter', // Garson
             ],
         ];
 
@@ -56,28 +54,24 @@ class UserSeeder extends Seeder
         // Mola Kafe Çalışanları
         $molaKafeUsers = [
             [
-                'name' => 'Zeynep Şahin',
+                'name' => 'Zeynep Şahin (Mola Kafe - Yönetici)',
                 'email' => 'zeynep@molakafe.com',
                 'password' => Hash::make('password123'),
-                'role' => 'manager',
             ],
             [
-                'name' => 'Can Arslan',
+                'name' => 'Can Arslan (Mola Kafe - Barista)',
                 'email' => 'can@molakafe.com',
                 'password' => Hash::make('password123'),
-                'role' => 'barista',
             ],
             [
-                'name' => 'Elif Çelik',
+                'name' => 'Elif Çelik (Mola Kafe - Garson)',
                 'email' => 'elif@molakafe.com',
                 'password' => Hash::make('password123'),
-                'role' => 'waiter',
             ],
             [
-                'name' => 'Burak Öztürk',
+                'name' => 'Burak Öztürk (Mola Kafe - Aşçı)',
                 'email' => 'burak@molakafe.com',
                 'password' => Hash::make('password123'),
-                'role' => 'chef', // Aşçı
             ],
         ];
 
@@ -91,28 +85,24 @@ class UserSeeder extends Seeder
         // Espresso Lab Çalışanları
         $espressoLabUsers = [
             [
-                'name' => 'Deniz Aydın',
+                'name' => 'Deniz Aydın (Espresso Lab - Yönetici)',
                 'email' => 'deniz@espressolab.com',
                 'password' => Hash::make('password123'),
-                'role' => 'manager',
             ],
             [
-                'name' => 'Cem Yıldız',
+                'name' => 'Cem Yıldız (Espresso Lab - Baş Barista)',
                 'email' => 'cem@espressolab.com',
                 'password' => Hash::make('password123'),
-                'role' => 'head_barista', // Baş Barista
             ],
             [
-                'name' => 'Selin Koç',
+                'name' => 'Selin Koç (Espresso Lab - Barista)',
                 'email' => 'selin@espressolab.com',
                 'password' => Hash::make('password123'),
-                'role' => 'barista',
             ],
             [
-                'name' => 'Mert Acar',
+                'name' => 'Mert Acar (Espresso Lab - Garson)',
                 'email' => 'mert@espressolab.com',
                 'password' => Hash::make('password123'),
-                'role' => 'waiter',
             ],
         ];
 
@@ -129,13 +119,11 @@ class UserSeeder extends Seeder
                 'name' => 'Test Müşteri',
                 'email' => 'customer@test.com',
                 'password' => Hash::make('password123'),
-                'role' => 'customer',
             ],
             [
                 'name' => 'Ali Veli',
                 'email' => 'ali@test.com',
                 'password' => Hash::make('password123'),
-                'role' => 'customer',
             ],
         ];
 
