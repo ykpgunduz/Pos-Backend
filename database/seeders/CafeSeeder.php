@@ -15,10 +15,10 @@ class CafeSeeder extends Seeder
     {
         // Ensure at least one cafe exists for FK relations
         Cafe::firstOrCreate(
-            ['email' => 'cafe@example.com'],
+            ['email' => 'cafe@harpysocial.com'],
             [
                 'name' => 'Default Cafe',
-                'password' => Hash::make('password'),
+                'password' => Hash::make('asd'),
                 'description' => 'Default cafe created by seeder',
                 'phone' => '0000000000',
                 'address' => 'Default address',
