@@ -11,7 +11,9 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         $cafe = $request->user('cafe');
-        $categories = Category::where('cafe_id', $cafe->id)->paginate(20);
+        $categories = Category::where('cafe_id', $cafe->id)
+            ->select(['id', 'cafe_id', 'icon', 'color', 'name', 'created_at', 'updated_at'])
+            ->paginate(20);
         return response()->json($categories);
     }
 

@@ -20,4 +20,18 @@ class Product extends Model
 		'active',
 		'star',
 	];
+
+	// İlişkilerin otomatik yüklenmesini engelle
+	protected $hidden = [];
+
+	// Relationships
+	public function cafe()
+	{
+		return $this->belongsTo(Cafe::class);
+	}
+
+	public function category()
+	{
+		return $this->belongsTo(Category::class);
+	}
 }

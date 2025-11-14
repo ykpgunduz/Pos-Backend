@@ -15,4 +15,18 @@ class Category extends Model
 		'color',
 		'name',
 	];
+
+	// Eğer products ilişkisi varsa, JSON'da otomatik yüklenmesini engelle
+	protected $hidden = [];
+
+	// Relationships
+	public function cafe()
+	{
+		return $this->belongsTo(Cafe::class);
+	}
+
+	public function products()
+	{
+		return $this->hasMany(Product::class);
+	}
 }

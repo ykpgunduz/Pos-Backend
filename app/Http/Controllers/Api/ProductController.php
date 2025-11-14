@@ -11,7 +11,9 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $cafe = $request->user('cafe');
-        $products = Product::where('cafe_id', $cafe->id)->paginate(20);
+        $products = Product::where('cafe_id', $cafe->id)
+            ->select(['id', 'cafe_id', 'category_id', 'image', 'name', 'description', 'price', 'stock', 'active', 'star', 'created_at', 'updated_at'])
+            ->paginate(20);
         return response()->json($products);
     }
 
