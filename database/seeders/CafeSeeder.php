@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Cafe;
 
 class CafeSeeder extends Seeder
@@ -14,8 +15,10 @@ class CafeSeeder extends Seeder
     {
         // Ensure at least one cafe exists for FK relations
         Cafe::firstOrCreate(
-            ['name' => 'Default Cafe'],
+            ['email' => 'cafe@example.com'],
             [
+                'name' => 'Default Cafe',
+                'password' => Hash::make('password'),
                 'description' => 'Default cafe created by seeder',
                 'phone' => '0000000000',
                 'address' => 'Default address',

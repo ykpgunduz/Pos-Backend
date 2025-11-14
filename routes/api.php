@@ -13,6 +13,17 @@ use App\Http\Controllers\Api\OrderItemController;
 use App\Http\Controllers\Api\CancelController;
 use App\Http\Controllers\Api\RatingController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\CafeAuthController;
+
+// Cafe Authentication Routes (public)
+Route::post('cafe/register', [CafeAuthController::class, 'register']);
+Route::post('cafe/login', [CafeAuthController::class, 'login']);
+
+// Cafe Protected Routes
+Route::middleware('auth:cafe')->group(function () {
+    Route::post('cafe/logout', [CafeAuthController::class, 'logout']);
+    Route::get('cafe/me', [CafeAuthController::class, 'me']);
+});
 
 // Products
 Route::get('products/list', [ProductController::class, 'index']);
