@@ -20,4 +20,20 @@ class Product extends Model
 		'active',
 		'star',
 	];
+
+	/**
+	 * Ürünün ait olduğu kategori ilişkisi
+	 */
+	public function category()
+	{
+		return $this->belongsTo(Category::class);
+	}
+
+	/**
+	 * Ürünün ait olduğu kafe ilişkisi
+	 */
+	public function cafe()
+	{
+		return $this->belongsTo(Cafe::class);
+	}
 }

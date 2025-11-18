@@ -15,4 +15,20 @@ class Category extends Model
 		'color',
 		'name',
 	];
+
+	/**
+	 * Kategoriye ait ürünler ilişkisi
+	 */
+	public function products()
+	{
+		return $this->hasMany(Product::class);
+	}
+
+	/**
+	 * Kategorinin ait olduğu kafe ilişkisi
+	 */
+	public function cafe()
+	{
+		return $this->belongsTo(Cafe::class);
+	}
 }
