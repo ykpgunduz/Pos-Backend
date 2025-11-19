@@ -12,7 +12,7 @@ class CafeController extends Controller
     public function show(Cafe $cafe){ return response()->json($cafe); }
     public function store(Request $r){
         $data = $r->validate([
-            'name'=>'required|string','description'=>'nullable|string','phone'=>'nullable|string','address'=>'nullable|string','address_link'=>'nullable|string','insta_name'=>'nullable|string','insta_link'=>'nullable|string','opening_time'=>'nullable|integer','closing_time'=>'nullable|integer'
+            'name'=>'required|string','description'=>'nullable|string','phone'=>'nullable|string','address'=>'nullable|string','address_link'=>'nullable|string','insta_name'=>'nullable|string','insta_link'=>'nullable|string','opening_time'=>'nullable|integer','closing_time'=>'nullable|integer','table_count'=>'required|integer|min:1'
         ]);
         return response()->json(Cafe::create($data),201);
     }

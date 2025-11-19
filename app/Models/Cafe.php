@@ -23,6 +23,7 @@ class Cafe extends Authenticatable
 		'insta_link',
 		'opening_time',
 		'closing_time',
+		'table_count',
 	];
 
 	protected $hidden = [

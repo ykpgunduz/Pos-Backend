@@ -22,6 +22,7 @@ class CafeAuthController extends Controller
             'phone' => 'nullable|string',
             'address' => 'nullable|string',
             'description' => 'nullable|string',
+            'table_count' => 'required|integer|min:1',
         ]);
 
         $cafe = Cafe::create([
@@ -31,6 +32,7 @@ class CafeAuthController extends Controller
             'phone' => $request->phone,
             'address' => $request->address,
             'description' => $request->description,
+            'table_count' => $request->table_count,
         ]);
 
         $token = $cafe->createToken('cafe-token')->plainTextToken;

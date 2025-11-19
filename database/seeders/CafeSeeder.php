@@ -27,6 +27,7 @@ class CafeSeeder extends Seeder
                 'insta_link' => null,
                 'opening_time' => null,
                 'closing_time' => null,
+                'table_count' => 10,
             ]
         );
     }

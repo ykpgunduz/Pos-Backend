@@ -10,8 +10,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        // Kategori bilgilerini de dahil ederek ürünleri getir
-        $products = Product::with(['category', 'cafe'])->paginate(20);
+        $products = Product::all()->paginate(20);
         return response()->json($products);
     }
 
