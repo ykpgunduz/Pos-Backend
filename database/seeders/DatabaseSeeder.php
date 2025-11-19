@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             CafeSeeder::class,
             CafeTableSeeder::class,
             CategorySeeder::class,
+            TableDefinitionSeeder::class,
         ]);
 
         // Seed a small set of products
