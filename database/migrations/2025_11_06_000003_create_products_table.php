@@ -16,11 +16,12 @@ return new class extends Migration
 			$table->foreignId('cafe_id')->constrained('cafes')->cascadeOnDelete();
 			$table->foreignId('category_id')->constrained('categories')->cascadeOnDelete();
 			$table->string('image')->nullable();
-			$table->string('name');
-			$table->text('description')->nullable();
-			$table->integer('price')->default(0);
-			$table->integer('stock')->default(0);
-			$table->boolean('active')->default(true);
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->decimal('price', 10, 2)->default(0.00);
+            $table->decimal('cost', 10, 2)->default(0.00);
+            $table->integer('stock')->default(0);
+            $table->boolean('active')->default(true);
 			$table->integer('star')->default(0);
 			$table->timestamps();
 		});

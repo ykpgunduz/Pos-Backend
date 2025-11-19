@@ -16,9 +16,16 @@ class Product extends Model
 		'name',
 		'description',
 		'price',
+		'cost',
 		'stock',
 		'active',
 		'star',
+	];
+
+	protected $casts = [
+		'price' => 'decimal:2',
+		'cost' => 'decimal:2',
+		'active' => 'boolean',
 	];
 
 	/**

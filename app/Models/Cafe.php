@@ -37,4 +37,10 @@ class Cafe extends Authenticatable
 			'password' => 'hashed',
 		];
 	}
+
+	// İlişkiler
+	public function tableDefinitions()
+	{
+		return $this->hasMany(TableDefinition::class);
+	}
 }

@@ -13,6 +13,7 @@ use App\Http\Controllers\Api\OrderItemController;
 use App\Http\Controllers\Api\CancelController;
 use App\Http\Controllers\Api\RatingController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\TableDefinitionController;
 use App\Http\Controllers\CafeAuthController;
 
 // Cafe Authentication Routes (public)
@@ -108,3 +109,11 @@ Route::get('users/{user}', [UserController::class, 'show']);
 Route::post('users/create', [UserController::class, 'store']);
 Route::match(['put','patch'], 'users/{user}/update', [UserController::class, 'update']);
 Route::delete('users/{user}/delete', [UserController::class, 'destroy']);
+
+// Table Definitions (Masa Tanımları)
+Route::get('table-definitions/list', [TableDefinitionController::class, 'index']);
+Route::get('table-definitions/cafe/{cafeId}', [TableDefinitionController::class, 'getByCafe']);
+Route::get('table-definitions/{tableDefinition}', [TableDefinitionController::class, 'show']);
+Route::post('table-definitions/create', [TableDefinitionController::class, 'store']);
+Route::match(['put','patch'], 'table-definitions/{tableDefinition}/update', [TableDefinitionController::class, 'update']);
+Route::delete('table-definitions/{tableDefinition}/delete', [TableDefinitionController::class, 'destroy']);
