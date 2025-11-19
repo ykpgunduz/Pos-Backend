@@ -29,10 +29,11 @@ class ProductController extends Controller
             'image' => 'nullable|string',
             'name' => 'required|string',
             'description' => 'nullable|string',
-            'price' => 'nullable|integer',
-            'stock' => 'nullable|integer',
+            'price' => 'required|numeric|min:0',
+            'cost' => 'nullable|numeric|min:0',
+            'stock' => 'nullable|integer|min:0',
             'active' => 'nullable|boolean',
-            'star' => 'nullable|integer',
+            'star' => 'nullable|integer|min:0|max:5',
         ]);
 
         $product = Product::create($data);
@@ -47,10 +48,11 @@ class ProductController extends Controller
             'image' => 'nullable|string',
             'name' => 'nullable|string',
             'description' => 'nullable|string',
-            'price' => 'nullable|integer',
-            'stock' => 'nullable|integer',
+            'price' => 'nullable|numeric|min:0',
+            'cost' => 'nullable|numeric|min:0',
+            'stock' => 'nullable|integer|min:0',
             'active' => 'nullable|boolean',
-            'star' => 'nullable|integer',
+            'star' => 'nullable|integer|min:0|max:5',
         ]);
 
         $product->update($data);
