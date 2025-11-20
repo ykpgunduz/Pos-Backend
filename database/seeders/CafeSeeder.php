@@ -17,6 +17,7 @@ class CafeSeeder extends Seeder
         Cafe::firstOrCreate(
             ['email' => 'cafe@example.com'],
             [
+                'id' => 1,
                 'name' => 'Default Cafe',
                 'password' => Hash::make('password'),
                 'description' => 'Default cafe created by seeder',
